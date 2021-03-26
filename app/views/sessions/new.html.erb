@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div class="row center sign-up-form">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h2 class="header">Log in</h2>
+        <div class="row">
+          <%= form_with(scope: :session, url: login_path, class: "col s12", local: true) do |form| %>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= form.email_field :email, placeholder: "Enter your emails adress", autofocus: true   %>
+                <%= form.label :email %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= form.password_field :password, placeholder: "Enter your password"  %>
+                <%= form.label :password, class:"active" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%#= form.button( @student.new_record? ? "Sign up!" : "Submit changes", class: "waves-effect waves-light btn orange right" )%>
+                <%= form.button '<i class="material-icons right">arrow_forward</i>Log in'.html_safe , class: "waves-effect waves-light btn orange right" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
